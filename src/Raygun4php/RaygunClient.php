@@ -202,7 +202,7 @@ namespace Raygun4php {
       {
         if (php_sapi_name() != 'cli' && !headers_sent())
         {
-          setcookie($key, $value, $timestamp);
+          setcookie($key, $value, $timestamp, '/');
         }
 
         return $value;
@@ -213,7 +213,7 @@ namespace Raygun4php {
         {
           if ($_COOKIE[$key] != $value && php_sapi_name() != 'cli' && !headers_sent())
           {
-            setcookie($key, $value, $timestamp);
+            setcookie($key, $value, $timestamp, '/');
           }
           return $_COOKIE[$key];
         }
